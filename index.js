@@ -27,11 +27,13 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * Counter1's 'count' variable is function scoped and private to that fucntion while counter2's count variable is globally scoped and could be modified by any function. Also, counterMaker is missing the 'return' before 'count++'. Seems like a typo.
+ 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter2 uses a closure because it has to reach outside its own scope to provide "closure" for the variable 'count'. Although from what I know, counter1 is technically using a closure as well when it reaches for it's own 'count' variable and creates a closure.
+ 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * counter1 would be preferable when you don't need the count variable to be accessible globally or by any other function. counter2 would be preferable if we do want count to be accissible globally, but we would have to be careful that we're not misusing the variable elseware so that it breaks something.
 */
 
 // counter1 code
@@ -56,11 +58,13 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
-
+    const inningScore = Math.floor(Math.random() * 3 );
+	return inningScore;
 }
+
+//console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +80,22 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(func, num){
 
-  /*Code Here*/
-
+	const final = {
+		home: 0,
+		away: 0,
+	};
+	
+	for (num; num > 0; num--) {
+		final.home = final.home + func();
+		final.away = final.away + func();
+	};
+	
+	return final;
 }
+
+//console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -104,7 +119,7 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(func1, func2, num) {
   /* CODE HERE */
 }
 
