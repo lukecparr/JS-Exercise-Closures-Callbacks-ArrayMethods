@@ -13,9 +13,9 @@
  * Example of usage of this higher-order function:
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
-*/
+ */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+	return callback(stringList[0])
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -38,10 +38,10 @@ function processFirstItem(stringList, callback) {
 
 // counter1 code
 function counterMaker() {
-  let count = 0;
-  return function counter() {
-    count++;
-  }
+	let count = 0;
+	return function counter() {
+		count++;
+	}
 }
 
 const counter1 = counterMaker();
@@ -50,7 +50,7 @@ const counter1 = counterMaker();
 let count = 0;
 
 function counter2() {
-  return count++;
+	return count++;
 }
 
 
@@ -58,9 +58,9 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(){
+function inning() {
 
-    const inningScore = Math.floor(Math.random() * 3 );
+	const inningScore = Math.floor(Math.random() * 3);
 	return inningScore;
 }
 
@@ -78,20 +78,20 @@ finalScore(inning, 9) might return:
   "Away": 5,
 }
 
-*/ 
+*/
 
-function finalScore(func, num){
+function finalScore(func, num) {
 
 	const final = {
 		home: 0,
 		away: 0,
 	};
-	
+
 	for (num; num > 0; num--) {
-		final.home = final.home + func();
-		final.away = final.away + func();
+		final.home += func();
+		final.away += func();
 	};
-	
+
 	return final;
 }
 
@@ -103,7 +103,7 @@ Create a function called `scoreboard` that accepts the following parameters:
 
 (1) Callback function `getInningScore`
 (2) Callback function `inning`
-(2) A number of innings
+(3) A number of innings
 
 and returns the score at each pont in the game, like so:
 
@@ -119,8 +119,38 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(func1, func2, num) {
-  /* CODE HERE */
+function scoreboard(cbFinal, cbInning, num) {
+
+	const final = {
+		home: 0,
+		away: 0,
+	};
+
+	for (let i = 0; i < num; i++) {
+		home = cbInning();
+		away = cbInning();
+
+		console.log(`Inning ${i+1}: ${away} - ${home}`)
+
+		final.home += home;
+		final.away += away;
+	}
+
+	console.log(`Final Score: ${final.away} - ${final.home}`)
+	
+//	console.log(cbFinal(cbInning, num))
 }
+
+
+scoreboard(finalScore, inning, 9)
+
+
+
+
+
+
+
+
+
 
 

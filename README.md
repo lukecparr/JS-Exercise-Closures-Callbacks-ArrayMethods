@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+	Closure is when a function does not contain
 2. Study the following code, then answer the questions below.
 
 ```js
