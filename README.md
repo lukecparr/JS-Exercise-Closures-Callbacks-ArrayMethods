@@ -42,7 +42,7 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
-	Closure is when a function does not contain a variable it required and has to reach outside its own scope to get the variable and provide "closure".
+	Closure is when a function does not contain a variable it requires and has to reach outside its own scope to get the variable and provide "closure".
 	
 2. Study the following code, then answer the questions below.
 

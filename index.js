@@ -65,7 +65,7 @@ function inning() {
 	return inningScore;
 }
 
-console.log(inning());
+console.log("inning() output: ", inning());
 
 /* Task 3: finalScore()
 
@@ -99,7 +99,7 @@ function finalScore(func, num) {
 	return final;
 }
 
-console.log(finalScore(inning, 9));
+console.log("finalScrore(inning, 9) output: ", finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -126,7 +126,7 @@ Final Score: awayTeam - homeTeam */
 
 //The instruction above to pass in `getInningScore` doesn't make sense to me. That's not a function in this doc and we weren't askde to create it. I assumed it was some kind of mistake when updating the project. When invocing `scoreboard` below I passed in my `finalScore` function instead, but did not invoce it within the function as it's not needed.
 function scoreboard(cbFinal, cbInning, num) {
-	
+	console.log("scoreboard(finalScore, inning, 9) output: ", )
 	//declare an object to hold final scores
 	const final = {
 		home: 0,
